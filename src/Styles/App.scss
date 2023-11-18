@@ -1,0 +1,10 @@
+@use "sass:map";
+@import "./appVariables.scss";
+
+#appContainer{
+    background-color: map-get($map: $appColors, $key: primaryBlack);
+    margin:0px;
+
+    font-family: map-get($map: $spotifyFonts, $key: 'thin');
+    overscroll-behavior-y: none;
+}

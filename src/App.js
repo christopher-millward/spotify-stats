@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./Styles/App.scss";
+import {useState, useEffect} from 'react';
+import Banner from "./Components/Banner";
+import NavBar from "./Components/NavBar";
+import LoadingImage from "./Components/LoadingImage";
+import Content from "./Components/Content";
 
-function App() {
+
+function App(){
+  const [route, setRoute]=useState('artists')
+  const [timeline, setTimeline]=useState('short_term')
+  const [appLoaded, setAppLoaded]=useState(false)
+
+  useEffect(()=>{
+    setInterval(()=>{
+      //trigger logo to shrink into banner
+      setAppLoaded(true)
+    }, 7000)
+  },[])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+
+        {appLoaded?
+          <>
+            <Banner route={route} timeline={timeline}/>
+            <Content route={route} timeline={timeline}/>
+            <NavBar timeline={timeline} setTimeline={setTimeline} setRoute={setRoute} route={route}/>
+          </>
+        :<LoadingImage/>
+        }
+        
+      </div>
   );
 }
 

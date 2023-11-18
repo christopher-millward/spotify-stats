@@ -1,0 +1,52 @@
+@import './appVariables.scss';
+
+#spotifyLogo{
+    position: absolute;
+    top:25%;
+    left:25%;
+
+    height:200px;
+
+    animation: disappear $loadingDuration ease-in forwards 1;
+
+};
+
+@keyframes disappear {
+    25%{
+        opacity:1;
+        transform:rotate(360deg*0);
+    };
+
+    85%{
+        opacity: 1;
+    };
+
+    100%{
+        transform:rotate(360deg*5);
+        opacity:0;
+    };
+};
+
+#loadingImage{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+};
+
+.loadingText{
+    color:white;
+    font-size: 20px;
+
+    position: absolute;
+    bottom:200px;
+    opacity:0;
+
+    animation: textAppear 0.5s linear forwards $loadingDuration+0.5;
+};
+
+@keyframes textAppear {
+    100%{
+        opacity:1;
+    };
+}

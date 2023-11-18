@@ -1,0 +1,17 @@
+@use "sass:map";
+@import './appVariables.scss';
+
+
+.timelineOption{
+    border:none;
+    background-color: transparent;
+    color: map-get($map: $appColors, $key: 'secondaryGrey');
+
+    font-family: map-get($map: $spotifyFonts, $key:'normal' );
+    font-size: 16px;
+}
+
+#selectedTimelineOption{
+    border-bottom: solid 1px white;
+    color: white;
+}

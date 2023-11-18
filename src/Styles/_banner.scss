@@ -1,0 +1,34 @@
+@use "sass:map";
+@import "./appVariables.scss";
+
+
+.banner{
+ position: fixed;
+ height:$bannerHeight;
+ width: 100vw;
+
+ font-size: 30px;
+ background-color: map-get($map: $appColors, $key: "primaryBlack");
+ color:white;
+ font-family: map-get($map: $spotifyFonts, $key: 'bold');
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+
+ animation: bannerAppear 1s linear forwards;
+ opacity: 0;
+}
+
+
+@keyframes bannerAppear {
+    100%{
+        opacity:1;
+    };
+}
+
+.statsLogo{
+    height:($bannerHeight*0.75);
+    margin-right:5px;
+}

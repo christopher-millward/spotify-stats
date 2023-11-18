@@ -1,0 +1,11 @@
+@import "./appVariables.scss";
+
+.timelineBar{
+
+    width:100%;
+    height:($navBarHeight*0.5);
+    
+    display: flex;
+    justify-content: space-around;
+
+}

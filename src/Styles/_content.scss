@@ -1,0 +1,23 @@
+@import './appVariables.scss';
+
+.content{
+    width:100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    padding-bottom: $navBarHeight;
+    
+}
+
+.bumper{
+    height: $bannerHeight;
+    width:100vw;
+}
+
+#genresContent{
+    position:fixed;
+    top:33vh;
+    color:white;
+}

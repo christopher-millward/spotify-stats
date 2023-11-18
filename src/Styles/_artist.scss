@@ -1,0 +1,23 @@
+.artist{
+    display:flex;
+    flex-direction: column;
+    width:30vw;
+
+    color:white;
+    margin:2px;
+}
+
+.artistArtistName{
+    padding: 0px;
+    margin: 2px;
+
+    font-size: 15px;
+    
+}
+
+.artistImage{
+    height:100px;
+    width:100px;
+}
+
+

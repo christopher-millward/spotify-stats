@@ -1,0 +1,38 @@
+@use "sass:map";
+@import './appVariables.scss';
+
+
+.categoryButton{
+    height:$navBarHeight*0.5;
+    width:100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color:map-get($map: $appColors, $key: "secondaryGrey");
+    font-size:16px;
+    
+    background-color: transparent;
+    border: none;
+
+    font-family: map-get($map: $spotifyFonts, $key:'normal' );
+}
+
+.categoryIcon{
+    height:25%;
+    filter:invert($iconInvertValue);
+    margin-bottom:10px;
+}
+
+.categoryButton:active{
+    color:white;
+    padding:5px;
+}
+
+#selectedCategoryButton{
+    border-bottom: solid 2px white;
+    filter:invert(0);
+    color:white;
+};

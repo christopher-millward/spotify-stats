@@ -1,0 +1,33 @@
+@import './appVariables.scss';
+
+.navBar{
+    position: fixed;
+    bottom:0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height:$navBarHeight;
+    width:100%;
+
+
+    background-image: linear-gradient(map-get($map:$navColors, $key: "blackTransparent"), map-get($map:$navColors, $key: "blackDark") 25%);
+
+    opacity:0;
+    animation: navBarAppear 1s linear forwards;
+}
+
+@keyframes navBarAppear {
+    100%{
+        opacity:1;
+    };
+}
+
+.navBarTopBumper{
+    height:10px;
+}
+
+.navBarBottomBumper{
+    height:40px;
+}

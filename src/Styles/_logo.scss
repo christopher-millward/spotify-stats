@@ -1,0 +1,114 @@
+@use 'sass:map';
+@import './appVariables.scss';
+
+
+#loadingLogoContainer{
+    position: absolute;
+    top:25%;
+    left:25%;
+
+    height:200px;
+    width:200px;
+
+    background-color: map-get($map: $appColors, $key: 'primaryGreen');
+
+    border-radius: 50%;
+
+    animation: appear $loadingDuration ease-in forwards 1;
+}
+
+.axes{
+    position:relative;
+    top:30px;
+    left:30px;
+    height:120px;
+    width:120px;
+    border: solid 10px;
+
+    border-color: transparent transparent map-get($map: $appColors, $key: 'primaryBlack') map-get($map: $appColors, $key: 'primaryBlack');
+    border-radius: 1px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+}
+
+
+.dataBar{
+    width:15px;
+    background-color: map-get($map: $appColors, $key:'primaryBlack' );
+
+    border-radius: 5px;
+    margin-bottom: 5px;;
+}
+
+$barStartHeights:(
+    'small':50px,
+    'medium':80px,
+    'large':100px,
+);
+
+$barEndHeights:(
+    'small':60px,
+    'medium':90px,
+    'large':110px,
+);
+
+@keyframes bar1Bump {
+    25%{
+        height:map-get($map: $barEndHeights, $key: 'small');
+    };
+};
+@keyframes bar2Bump {
+    25%{
+        height:map-get($map: $barEndHeights, $key: 'medium');
+    };
+};
+@keyframes bar3Bump {
+    25%{
+        height:map-get($map: $barEndHeights, $key: 'large');
+    };
+};
+
+@keyframes appear {
+    0%{
+        opacity:0;
+    }
+    85%{
+        transform:rotate(0deg);
+        opacity:0;
+    };
+    100%{
+        transform:rotate(360deg*4);
+        opacity:1;
+    }
+}
+
+$barBumpDuration:1.5s;
+$barBumpDelay:1s;
+
+#bar1{
+    position: relative;
+
+    height:map-get($map: $barStartHeights, $key: 'small');
+
+    animation: bar1Bump $barBumpDuration ease-out $loadingDuration+$barBumpDelay infinite;
+
+}
+
+#bar2{
+    position: relative;
+
+    height:map-get($map: $barStartHeights, $key: 'medium');
+
+    animation: bar2Bump $barBumpDuration ease-out $loadingDuration+$barBumpDelay+0.25 infinite;
+}
+
+#bar3{
+    position: relative;
+
+    height:map-get($map: $barStartHeights, $key: 'large');
+
+    animation: bar3Bump $barBumpDuration ease-out $loadingDuration+$barBumpDelay+0.5 infinite;
+}
