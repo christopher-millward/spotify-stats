@@ -9,7 +9,7 @@ import Content from "./Components/Content";
 function App(){
   const [route, setRoute]=useState('artists')
   const [timeline, setTimeline]=useState('short_term')
-  const [appLoaded, setAppLoaded]=useState(true)
+  const [appLoaded, setAppLoaded]=useState(false)
 
   useEffect(()=>{
     setInterval(()=>{
