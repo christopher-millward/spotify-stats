@@ -3,15 +3,18 @@
 
 .song{
     width:98vw;
+    min-height:75px;
 
     display: flex;
     flex-direction: row;
-    align-items: center;;
+    align-items: center;
 
     color:white;
+
 }
 
 .index{
+    width:20px;
     font-family: map-get($map: $spotifyFonts, $key: 'bold');
     font-size: 18px;
     color:white;
@@ -27,7 +30,7 @@ p{
 }
 
 .songInfo{
-    height:70px;
+    min-height:70px;
 }
 
 .songTitle{

@@ -2,9 +2,12 @@ import '../Styles/_content.scss';
 import data from '../data/sampleData.json';
 import Artist from './Artist';
 import Song from './Song';
+import React, {useEffect, useRef} from 'react';
 
 function Content(props) {
 
+    const updateRef=useRef();
+    
     let element;
     if(props.route==='genres'){
         
@@ -28,11 +31,15 @@ function Content(props) {
         }
     }
 
-    
-    
+    useEffect(()=>{
+        //flash content opacity for smooth transition
+        updateRef.current.animate({
+            opacity:[0,1]
+        },1500)
+    },[element])
 
     return (
-      <div className='content' id={`${props.route}Content`}>
+      <div className='content' id={`${props.route}Content`} ref={updateRef}>
         <div className='bumper'></div>
         {element}
       </div>

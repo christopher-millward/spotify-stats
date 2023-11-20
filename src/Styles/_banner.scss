@@ -25,6 +25,7 @@
 @keyframes bannerAppear {
     100%{
         opacity:1;
+        z-index: 99;
     };
 }
 
